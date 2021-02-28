@@ -1,15 +1,8 @@
-from flask import Flask
-import folium
+
 import json
 from tokogeko_package import utils
 
-app = Flask(__name__)
 token =''
-
-@app.route('/')
-def hello_world():
-    map = folium.Map(location=[35.000081, 137.004055],height=300, zoom_start=15)
-    return map
 
 def main():
     # get token & set headers
@@ -28,5 +21,4 @@ def main():
     # 地図オブジェクト作成
 
 if __name__ == '__main__':
-    app.debug = True
-    app.run()
+    main()
