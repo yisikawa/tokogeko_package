@@ -4,7 +4,7 @@ import requests
 def getToday():
     today = datetime.date.today()
     return today
-
+# login tokenを取得
 def login(userid,password):
     payload = {'userid':userid,'password':password}
     # print(payload)
@@ -15,7 +15,10 @@ def login(userid,password):
     else:
         token = ''
     return token
-
+# 参照userリストを取得
 def getAuth(headers):
     r = requests.get('https://tokogeko.net/api/auth',headers=headers)
     return r
+# 登下校経路を取得
+def getPersonalPath(headers,userID,date,type):
+    return
