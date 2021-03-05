@@ -21,4 +21,6 @@ def getAuth(headers):
     return r
 # 登下校経路を取得
 def getPersonalPath(headers,userID,date,type):
-    return
+    str = 'https://tokogeko.net/api/route?'+f'userid={userID}'+f'&date={date}'+f'&type={type}'
+    r = requests.get(str,headers=headers)
+    return r.text
